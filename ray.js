@@ -1,7 +1,7 @@
 class Ray {
-    constructor(x, y){
-        this.pos = createVector(x,y); /*position*/
-        this.dir = createVector(1, 0); /*direction*/
+    constructor(pos, angle){
+        this.pos = pos; /*position*/
+        this.dir = p5.Vector.fromAngle(angle); /*direction*/
     }
 
     lookAt(x, y) {
@@ -47,8 +47,12 @@ class Ray {
         /*The intersection point falls within the first line segment if 0.0 ≤ t ≤ 1.0, and it falls within the second line segment if 0.0 ≤ u ≤ 1.0.*/ 
         /*although 0.0 < u < 1 is for a defined line but our ray is a vector that can be of infinite length*/
         /*sp we'll just do if u > 0*/
-        if (t > 0 && t < 1 && u > 0) {
-            return true; /*we DID touch the wall*/
+        if (t > 0 && t < 1 && u > 0) { /*we DID touch the wall*/
+            const pt = createVector();
+            /* get coordinates from formula (Px,Py) = (x1+t(x2-x1)), y1+t(y2-y1)) */
+            pt.x = x1 + t * (x2 - x1);
+            pt.y  = y1 + t * (y2 - y1);
+            return pt; 
         } else {
             return;
         }
