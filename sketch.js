@@ -11,11 +11,13 @@ function draw() {
     background(0);
     wall.show();
     ray.show();
+    ray.lookAt(mouseX, mouseY);
 
-let pt = ray.cast(wall); /*cast like casting a light against a wall*/
-if (pt) {
-    fill(255); /*if the vector touches the wall then draw the line*/
-    ellipse(pt.x, pt.y, 8, 8);
-    }
+let pt = ray.cast(wall); /*from ray.js, cast like casting a light against a wall*/
+console.log(pt);
+// if (pt) {
+//     fill(255); /*if the vector touches the wall then draw the line*/
+//     ellipse(pt.x, pt.y, 8, 8);
+//     }
 
 }
