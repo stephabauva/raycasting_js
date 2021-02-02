@@ -5,10 +5,10 @@ let xoff = 0;
 let yoff = 10000;
 
 function setup() {
-    createCanvas(400, 400);
+    createCanvas(400, 400); //W * H fullscreen: 1420, 680
     // wall = new Boundary(300, 100, 300, 300); /*from Boundary.js*/
     // ray = new Ray(100, 200); /*from ray.js*/
-    for (let i = 0; i < 5; i++) {
+    for (let i = 0; i < 10; i++) {
         let x1 = random(width);
         let x2 = random(width);
         let y1 = random(height);
@@ -32,6 +32,7 @@ function draw() {
         wall.show();
     }
     particle.show();
+    // particle.update(mouseX, mouseY);
     particle.update(noise(xoff) * width, noise(yoff) * height);
     particle.look(walls);
 

@@ -12,9 +12,9 @@ change pointer location manually -> sketch.js ->
 
 changing background color: sketch.js -> draw() -> change background() argument : for black (0), for dark blue ("#040038")
 
-changing walls color: Boundary.js -> show() --> stroke(x,y,z,w)
+changing walls color: Boundary.js -> show() --> stroke(x,y,z, alpha)
 x, y, z: rbg colors
-w: the width of the line
+alpha: the width of the line
 
 color picker: https://htmlcolors.com/google-color-picker
 green fluo: 119, 255, 0

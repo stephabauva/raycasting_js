@@ -5,7 +5,7 @@ class Boundary {
     }
 
     show() {
-        stroke(255)
+        stroke(119, 255, 0, 255)
         line(this.a.x, this.a.y, this.b.x, this.b.y);
     }
 }
