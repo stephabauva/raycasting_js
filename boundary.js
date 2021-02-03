@@ -1,5 +1,5 @@
 /** 
- * Defines two points a and b, linked together with a line 
+ * Defines two points a and b, linked together with a line.
  * @param {int} x1 - x value for a
  * @param {int} y1 - y value for a
  * @param {int} x2 - x value for b
