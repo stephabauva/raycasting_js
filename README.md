@@ -1,5 +1,7 @@
 # raycasting_js
 
+Go to out -> index.html to see the documentation
+
 To make custom changes:
 
 changing the number of rays: particle.js -> Particle() --> for loop increment

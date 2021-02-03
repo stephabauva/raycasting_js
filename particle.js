@@ -7,20 +7,20 @@ class Particle {
     constructor() {
         this.pos = createVector(width / 2, height / 2);
         this.rays = [];
-        for (let a = 0; a < 360; a +=10) {
+        for (let a = 0; a < 360; a +=2) {
             this.rays.push(new Ray(this.pos, radians(a)));
         }
     }
-    /** Updates pos vector values x and y */
+    /** Updates pos vector values x and y, either manually or automatically using Perlin noise formula (see documentation: Global - draw) */
     update(x,y) {
         this.pos.set(x,y);
     }
-    /** Checks if the vector intersects with a wall anf if so, casts a line from teh source to the wall
+    /** Checks if the vector intersects with a wall anf if so, casts a line from the source to the wall
     * @param {Array<Float>} - each subarray contains the start and end of a wall
     * @property {vector} pt - The point of intersection betw/ the ray and the wall, calculated in Ray.cast()
     * @property {float} d - distance between the source pos and the point of intersection with the wall
-    * @property {number} record - keeps track of the smallest length of teh vector at each loop
-    * @property {vector} closest - everytime a point of intersection exist and the distance d is < to the last recorded distance, then closest = the new point coordinates
+    * @property {number} record - keeps track of the smallest length of the vector at each loop
+    * @property {vector} closest - everytime a point of intersection exists and the distance d is < to the last recorded distance, then closest = the new point coordinates
     */
     look(walls) {
         for (let ray of this.rays) {
@@ -42,7 +42,7 @@ class Particle {
             }
         }
     }
-    /** Displays all vectors 'ray' from the list 'rays' */
+
     show() {
         fill(255);
         ellipse(this.pos.x, this.pos.y, 4); //shape displayed on the wall
